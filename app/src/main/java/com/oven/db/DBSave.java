@@ -3,7 +3,7 @@ package com.oven.db;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.oven.util.ContextProvider;
+import com.oven.util.MyApplication;
 
 /**
  * 将数据存入数据库
@@ -13,7 +13,7 @@ import com.oven.util.ContextProvider;
 public class DBSave {
 
     public static void save(String description, String themeName, String themeId, String thumbnail) {
-        DBHelper dbHelper = new DBHelper(ContextProvider.getContext(), "themes.db", null, DBConstant.DBVERSION);
+        DBHelper dbHelper = new DBHelper(MyApplication.getContext(), "themes.db", null, DBConstant.DBVERSION);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("thumbnail", thumbnail);
@@ -27,7 +27,7 @@ public class DBSave {
     public static void save(String description, String themeName, String themeId, String Image_source, String background)
 
     {
-        DBHelper dbHelper = new DBHelper(ContextProvider.getContext(), "themes.db", null, DBConstant.DBVERSION);
+        DBHelper dbHelper = new DBHelper(MyApplication.getContext(), "themes.db", null, DBConstant.DBVERSION);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("background", background);

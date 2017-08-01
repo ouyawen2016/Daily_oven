@@ -27,7 +27,7 @@ public class DBConstant {
             +"title text,"
             +"images text)";
 
-        public  static final int DBVERSION = 1;
+    public  static final int DBVERSION = 1;
 
 
 

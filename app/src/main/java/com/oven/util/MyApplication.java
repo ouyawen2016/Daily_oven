@@ -1,5 +1,6 @@
 package com.oven.util;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
@@ -8,11 +9,13 @@ import android.content.Context;
  * Created by oven on 2017/5/7.
  */
 
-public class ContextProvider extends Application {
+public class MyApplication extends Application {
+    //这是一个生命周期伴随整个应用的类，不存在内存泄漏风险
+    @SuppressLint("StaticFieldLeak")
     private static Context mContext;
         public void onCreate(){
             super.onCreate();
-            mContext= getApplicationContext();
+            mContext = getApplicationContext();
             }
         public static Context getContext(){
             return mContext;

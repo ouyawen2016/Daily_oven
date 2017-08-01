@@ -1,5 +1,6 @@
 package com.oven.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,11 +62,12 @@ public class NewsActivity extends BaseActivity {
 
     }
 
+
     public void showNewsDetail(NewsDetails newsDetails){
         //TODO:怎么用textview解析html
         //TODO:调整显示
         mshowDetails.loadDataWithBaseURL(null,newsDetails.getBody(),"text/html","utf-8",null);
-        //mshowDetails.setText(Html.fromHtml(newsDetails.getBody(),));
+       // mshowDetails.setText(Html.fromHtml(newsDetails.getBody(),));
         mshowTitle.setText(newsDetails.getTitle());
         mshowPic.setImageBitmap(newsDetails.getBitmap());
         mshowPicsrc.setText(newsDetails.getImagesource());
